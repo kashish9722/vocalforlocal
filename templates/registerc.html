@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block head %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<link rel="stylesheet" type="text/css" href="registerc.css">
+{% endblock head %}
+{% block title %}login and register{% endblock title %}
+{% block body%}
+
+<div class="card bg-light">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Create Account</h4>
+	<p class="text-center">Get started with your free account</p>
+	
+	<form action='registerc' method="POST">
+	{% csrf_token %}
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="flname" class="form-control" placeholder="Full name" type="text">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+ </div>
+        <input name="email" class="form-control" placeholder="Email address" type="email">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+
+		 <!-- form-group// -->
+		{% comment %} <input type="tel" name="pnumber" placeholder="phone number"> {% endcomment %}
+		<select class="custom-select" style="max-width: 120px;">
+		    <option selected="">+91</option>
+		    
+		</select>
+    	<input name="pnumber" class="form-control" placeholder="Phone number" type="text">
+    {% comment %} </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+		</div>
+		<select class="form-control">
+			<option selected=""> Select product type</option>
+			<option>food</option>
+			<option>clothing</option>
+			<option>others</option>
+		</select>
+	</div> <!-- form-group end.// --> {% endcomment %}
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input class="form-control" name="password" placeholder="Create password" type="password">
+    </div> <!-- form-group// -->
+
+   <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input class="form-control"  name="repassword"placeholder="Repeat password" type="password">
+    </div> <!-- form-group// -->                                      
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary"> Create Account  </button>
+    </div> <!-- form-group// -->      
+    <p class="text-center">Have an account? <a href="loginc">Log In</a> </p>                                                                 
+</form>
+   {% for message in messages  %}            
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message : </strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+      {% endfor %}   
+ {% endblock body%}

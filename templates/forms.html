@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block head %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<link rel="stylesheet" type="text/css" href="registerc.css">
+{% endblock head %}
+
+{% block title %}profile {% endblock title %}
+{% block body%}
+ <form action="forms" method='POST'>
+        
+            	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="flname" class="form-control" placeholder="Full name" type="text">
+    </div> <!-- form-group// -->
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="username" class="form-control" placeholder="create  username" type="text">
+    </div> <!-- form-group// -->
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="address" class="form-control" placeholder="address" type="text">
+    </div> <!-- form-group// -->
+	
+	
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="zip" class="form-control" placeholder="ZIP CODE" type="text">
+    </div> <!-- form-group// -->
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="state" class="form-control" placeholder="STATE" type="text">
+    </div> <!-- form-group// -->
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="city" class="form-control" placeholder="CITY" type="text">
+    </div> <!-- form-group// -->
+    
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+ </div>
+        <input name="email" class="form-control" placeholder="Email address" type="email">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+		</div>
+		<select class="custom-select" style="max-width: 120px;">
+		    <option selected="">+91</option>
+		    
+		</select>
+    	<input name="pnumber" class="form-control" placeholder="Phone number" type="text">
+    </div> <!-- form-group// -->
+   <div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="iurl" class="form-control" placeholder="INSTAGRAM URL/WEBSITE link" type="url">
+    </div> <!-- form-group// -->
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input name="desc" class="form-control" placeholder="DESCRIPTION" type="textarea">
+
+  
+
+      </form> 
+      
+  {% endblock body%}

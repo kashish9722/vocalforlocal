@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block head %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+{% endblock head %}
+{% block title %}PROFILE{% endblock title %}
+{% block body%}
+ <div class="alert alert-info" role="alert">
+
+</div>
+<div class="alert2 alert-dark" role="alert">
+ <a href="{% url 'profile'%}"style="padding-left : 80px">profile </a>
+ 
+ <a href="{% url 'addproduct'%}"style="padding-left : 80px">ADD product </a>
+</div>
+
+  {% endblock body%}

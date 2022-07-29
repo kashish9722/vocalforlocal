@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}choose{% endblock title %}
+{% block body%}
+ <h1>SELECT YOUR LOCATION AND CATEGORY</h1>
+      <form  action="list" method="POST">
+        {% csrf_token %}
+        <label for="zip">ENTER ZIPCODE</label><br>
+        <input type="text" id="zip" name="zip" ><br>
+        <p>Please select your required category</p>
+        <select name="Category" required>
+          <option value="" selected>----None----</option>
+          <option value="accessory">Accessory</option>
+          <option value="Clothings">Clothings</option>
+          <option value="other">other</option>
+          <option value="Food">Food</option>
+          
+        </select>
+
+</select>
+        <br>
+        <br>
+        <input type="submit" href="{% url 'list'%}" value="SUBMIT">
+      </form>
+
+{% comment %} <a href="{% url 'profile'%}"style="padding-left : 80px">profile </a> {% endcomment %}
+  {% endblock body%}

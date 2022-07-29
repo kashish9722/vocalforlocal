@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% block head %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<style>
+ <a class="nav-link" href="/Account">Account</a>
+     a{
+     font-size: 30px;
+   }
+   .alert2
+   {
+     width: 400px;
+     margin-top: 100px;
+     margin-left: 340px;
+   }
+</style>
+{% endblock head %}
+{% block title %}login and register{% endblock title %}
+{% block body%}
+ <div class="alert alert-info" role="alert">
+<h1 style= "text-align: center;"> LOGIN
+    <br>
+                                  REGISTRATION
+</h1>
+</div>
+<div class="alert2 alert-dark" role="alert">
+ <a href="{% url 'login'%} " style="padding-left : 80px">Login as seller</a>
+ <a href="{% url 'loginc'%} " style="padding-left : 80px">Login as customer</a>
+ <a href="{% url 'registerc'%}"style="padding-left : 80px">Register as Seller </a>
+ <a href="{% url 'registers'%}"style="padding-left : 80px">Register as Customer </a>
+</div>
+{% for message in messages %}
+         <h2>{{ msg}}</h2>
+      {%endfor%}
+
+      <h1 style= "text-align: center;">WELCOME TO VOCAL FOR LOCAL {{email}} </h3>
+  {% endblock body%}

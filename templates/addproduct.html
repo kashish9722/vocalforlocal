@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block head %}
+
+{% endblock head %}
+
+{% block title %}add product {% endblock title %}
+{% block body%}
+ <form action="addproduct" method='POST'>
+        {% csrf_token %}
+        <div><br>
+        <label for="username">USER NAME:</label><br>
+        <input type="text" id="username" name="username" ><br>
+        </div>
+        
+        <div>
+            Instagram URL:<br>
+            <input type="url" placeholder="instagram url"  name='iurl'>
+        </div><br>
+        <div>
+            <label for="category">category:</label>
+  <select name="category" >
+    <option value="food">food</option>
+    <option value="accessory">accessory</option>
+    <option value="jewellery">other</option>
+    <option value="clothing">clothing</option>
+    <option value="clothing">FOOD</option>
+  </select>
+        </div><br>
+        <label for="pname">PRODUCT NAME:</label><br>
+        <input type="text" id="pname" name="pname" ><br>
+        <div>
+        </div><br>
+        <label for="desc">PRODUCT DESCRIPTION:</label><br>
+        <input type="textarea" id="desc" name="desc" ><br>
+        <div>
+            IMAGE:
+            <input type="file"  name ='img' >
+        </div><br>
+        
+        
+        <input type="submit" value="Submit">
+
+      </form> 
+  {% endblock body%}
